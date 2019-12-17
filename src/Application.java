@@ -14,12 +14,19 @@ public class Application {
         PrintMainMenu();
     }
 
+    private String bookArt =
+            "    ______\n" +
+            "  /      //\n" +
+            " /______//\n" +
+            "(______(/   ";
+
     private Path path = Paths.get("src/books.txt");
     private String[] bookList;
 
     private void PrintMainMenu() {
+        System.out.print(bookArt);
         System.out.println("~Library");
-        System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
+        System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
         System.out.println("1. List of books");
         System.out.println();
         System.out.println("0. Exit application");
@@ -36,13 +43,14 @@ public class Application {
     }
 
     private void PrintBooksList() {
+        System.out.print(bookArt);
         System.out.println("~Library/List of books");
-        System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
+        System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
 
         int i = 0;
         for (String book:bookList) {
             String[] bookArr = book.split("\\.");
-            System.out.println(++i+". "+bookArr[0]+" - "+bookArr[1]);
+            System.out.println(++i+". "+bookArr[0]);
         }
 
         System.out.println();
@@ -64,8 +72,9 @@ public class Application {
 
     private void PrintBookQuery(String book) {
         String[] bookArr = book.split("\\.");
+        System.out.print(bookArt);
         System.out.println("~Library/Book/"+bookArr[0]);
-        System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
+        System.out.println("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
         System.out.println("Status: "+bookArr[1]);
         if(bookArr[1].equals("available")) {
             System.out.println("Would you like to borrow the selected book?");

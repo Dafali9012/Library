@@ -2,3 +2,4 @@ Harry Potter and the Goblet of Fire.available
 Stephen King's IT.available
 Winnie the Pooh.available
 The Lord of the Rings.unavailable
+The Great Gatsby.available
